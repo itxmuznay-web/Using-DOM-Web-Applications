@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Electricity Bill Calculator</title>
+</head>
+<body>
+    <div>
+        <h1>Electricity Bill Calculator</h1>
+<form onsubmit="calculateBill(); return false;">
+    <input type="number" id="units" placeholder="Enter units consumed"><br><br>
+    <input type="number" id="rate" placeholder="Enter rate per unit (PKR)"><br><br>
+    <button type="submit">Calculate Bill</button>
+</form>
+</div>
+<div id="bill"></div>
+<script>
+function calculateBill() {
+    const units = Number(document.querySelector("#units").value);
+    const rate = Number(document.querySelector("#rate").value);
+    const totalBill = units * rate;
+    const outputDiv = document.querySelector("#bill");
+    outputDiv.innerHTML = `Total Electricity Bill: ${totalBill} PKR`;
+}
+</script>
+    <li><a href="./4 BMICalculateApp.html">BMICalculateApp</a></li>
+</body>
+</html>

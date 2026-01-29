@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Attendance Percentage Calculator</h1>
+
+<form onsubmit="calculateAttendance(); return false;">
+    <input type="number" id="attended" placeholder="Enter classes attended"><br><br>
+    <input type="number" id="total" placeholder="Enter total classes"><br><br>
+    <button type="submit">Calculate Attendance %</button>
+</form>
+
+<div id="attendanceOutput"></div>
+
+<script>
+function calculateAttendance() {
+    const attended = Number(document.querySelector("#attended").value);
+    const total = Number(document.querySelector("#total").value);
+    const percentage = (attended / total) * 100;
+    const outputDiv = document.querySelector("#attendanceOutput");
+    outputDiv.innerHTML = `Attendance: ${percentage.toFixed(2)}%`;
+}
+</script>
+</body>
+</html>

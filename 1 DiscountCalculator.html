@@ -1,0 +1,48 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <h1>Discount Calculator</h1>
+<div>
+  <form onsubmit="discountCalculate(); return false;">
+    <input
+      type="number"
+      name="originalPrice"
+      id="originalPrice"
+      placeholder="Enter your originalPrice"
+    />
+    <br><br>
+    <input
+      type="number"
+      name="discountPercent"
+      id="discountPercent"
+      placeholder="Enter your discountPercent"
+    />
+    <br><br>
+    <button type="submit">Discount</button><br><br>
+  </form>
+</div>
+<div id="discountCalculate"></div>
+
+<script>
+function discountCalculate() {
+  const originalInputRef = document.querySelector("#originalPrice");
+  const discountInputRef = document.querySelector("#discountPercent");
+
+  const originalPrice = Number(originalInputRef.value);
+  const discountPercent = Number(discountInputRef.value);
+
+  const discountAmount = (originalPrice * discountPercent) / 100;
+  const finalPrice = originalPrice - discountAmount;
+
+  const perDivRef = document.querySelector("#discountCalculate");
+  perDivRef.innerHTML = `Discount: ${discountAmount} PKR <br> Final Price: ${finalPrice} PKR`;
+}
+</script>
+<li><a href=".//2 SalaryCalculator.html">Salary-Calculator</a></li>
+  </body>
+</html>

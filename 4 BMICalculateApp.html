@@ -1,0 +1,36 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <div>
+      <h1>BMICalculateApp</h1>
+      <form onsubmit=" BMICalculate();return false;">
+        <input type="number" name="weight" id="weight" placeholder="Enter your weight" /><br /><br />
+        <input type="number" name="height" id="height" placeholder="Enter your height"/><br /><br />
+        <button>BMI Calculate</button><br /><br />
+      </form>
+    </div>
+    <div id="BMI"></div>
+    <script>
+      function BMICalculate() {
+    const weightInputRef = document.querySelector("#weight");
+    const heightInputRef = document.querySelector("#height");
+
+    const weight = Number(weightInputRef.value);
+    const height = Number(heightInputRef.value);
+
+    const bmi = (weight /height )*2; 
+
+    console.log(bmi);
+
+    const perDivRef = document.querySelector("#BMI");
+    perDivRef.innerHTML = `Your BMI is: ${bmi.toFixed(2)}`;
+}
+    </script>
+    <a href="./5 AttendencePercentage.html">AttendancePercentage</a>
+  </body>
+</html>

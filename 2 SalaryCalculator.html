@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Salary-Calculator</title>
+</head>
+<body>
+    <h1>Salary Calculator</h1>
+
+<form onsubmit="SalaryCalculator(); return false;">
+    <input type="number" id="basicsalary" placeholder="Enter basic salary"><br><br>
+    <input type="number" id="allowances" placeholder="Enter allowances"><br><br>
+    <input type="number" id="bonus" placeholder="Enter bonus"><br><br>
+    <input type="number" id="deduction" placeholder="Enter deduction"><br><br>
+    <button type="submit">Calculate Salary</button>
+</form>
+
+<div id="SalaryCalculator"></div>
+
+<script>
+function SalaryCalculator() {
+    const basicsalary = Number(document.querySelector("#basicsalary").value);
+    const allowance = Number(document.querySelector("#allowances").value);
+    const bonus = Number(document.querySelector("#bonus").value);
+    const deduction = Number(document.querySelector("#deduction").value);
+
+    const totalSalary = basicsalary + allowance + bonus - deduction;
+
+    const outputDiv = document.querySelector("#SalaryCalculator");
+    outputDiv.innerHTML = `Total Salary: ${totalSalary} PKR`;
+}
+</script>
+
+<li><a href="./3 ElectricityBillApp.html">Electricity Bill Calculator</a></li>
+
+
+
+
+</body>
+</html>
